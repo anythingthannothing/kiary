@@ -1,5 +1,20 @@
 # Dependencies
-*/node_modules
+/**/node_modules/*
+
+# Environment
+/**/.env*
+!/**/.env.example
+
+# Build
+/**/dist
+/**/build
+
+# Testing
+/**/coverage
+
+# Logs
+/**/logs
+/**/*.log
 
 # IDE
-.idea
+/**/.idea
