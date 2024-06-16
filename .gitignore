@@ -5,6 +5,9 @@
 /**/.env*
 !/**/.env.example
 
+# Data
+/pg-data
+
 # Build
 /**/dist
 /**/build
