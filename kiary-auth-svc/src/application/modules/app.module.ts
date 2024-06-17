@@ -1,13 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserEntity, AccountEntity } from './core/entities';
-import { PasswordEntity } from './core/entities/password.entity';
-import { SignUpController } from './api/controllers/auth/sign-up.controller';
-import { AuthModule } from './api/auth/auth.module';
-import { SignUpService } from './core/services/auth/sign-up.service';
+import { SignUpController } from '../controllers/auth/sign-up.controller';
+import { AuthModule } from './auth.module';
+import { SignUpService } from '../../core/services/auth/sign-up.service';
 import { ConfigModule } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
@@ -26,12 +22,13 @@ import { ConfigModule } from '@nestjs/config';
       username: process.env.PG_DB_USERNAME,
       password: process.env.PG_DB_PASSWORD,
       schema: process.env.PG_DB_SCHEMA,
-      entities: [UserEntity, AccountEntity, PasswordEntity],
       synchronize: process.env.NODE_ENV !== 'production',
+      logging: process.env.NODE_ENV === 'development',
+      autoLoadEntities: true,
     }),
     AuthModule,
   ],
-  controllers: [AppController, SignUpController],
-  providers: [AppService, SignUpService],
+  controllers: [SignUpController],
+  providers: [SignUpService],
 })
 export class AppModule {}

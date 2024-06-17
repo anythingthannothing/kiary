@@ -1,20 +1,26 @@
-import { Body, Controller, Inject, Post } from '@nestjs/common';
+import { Controller, Inject } from '@nestjs/common';
 import { SignUpService } from '../../../core/services/auth/sign-up.service';
 import { ISignUpService } from '../../../core/i-services/i-sign-up.service';
-import { SignUpRequestDto } from '../../dtos/sign-up-request.dto';
-import { SignUpResponseDto } from '../../dtos/sign-up-response.dto';
 import { AuthMapper } from '../../mappers/auth-mapper';
+import { GrpcMethod } from '@nestjs/microservices';
+import { SignUpRequestDto } from '../../dtos/sign-up-request.dto';
+import { Metadata, ServerUnaryCall } from '@grpc/grpc-js';
+import { SignUpResponseDto } from '../../dtos/sign-up-response.dto';
 
-@Controller('sign-up')
+@Controller()
 export class SignUpController {
   constructor(
     @Inject(SignUpService) private readonly signService: ISignUpService,
   ) {}
 
-  @Post()
-  async execute(@Body() dto: SignUpRequestDto): Promise<SignUpResponseDto> {
+  @GrpcMethod('AuthService', 'SignUp')
+  async execute(
+    data: SignUpRequestDto,
+    metadata: Metadata,
+    call: ServerUnaryCall<any, any>,
+  ): Promise<SignUpResponseDto> {
     const user = await this.signService.execute(
-      AuthMapper.mapToSignUpServiceInputDto(dto),
+      AuthMapper.mapToSignUpServiceInputDto(data),
     );
 
     return AuthMapper.mapToSignUpResponseDto(user);
