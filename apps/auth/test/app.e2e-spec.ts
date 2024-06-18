@@ -1,14 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { AppModule } from '../src/api/modules/app.module';
+import { KiaryAuthSvcModule } from './../src/kiary-auth-svc.module';
 
-describe('AppController (e2e)', () => {
+describe('KiaryAuthSvcController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [AppModule],
+      imports: [KiaryAuthSvcModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
