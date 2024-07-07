@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { SignUpController } from '../controllers/auth/sign-up.controller';
 import { AuthModule } from './auth.module';
-import { SignUpService } from '../../core/services/auth/sign-up.service';
+import { SignUpService } from '../services/auth/sign-up.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 

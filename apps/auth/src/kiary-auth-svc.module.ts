@@ -1,10 +1,9 @@
 import { Module } from '@nestjs/common';
-import { KiaryAuthSvcController } from './kiary-auth-svc.controller';
-import { KiaryAuthSvcService } from './kiary-auth-svc.service';
+import { UserModule } from './application/modules/user.module';
 
 @Module({
-  imports: [],
-  controllers: [KiaryAuthSvcController],
-  providers: [KiaryAuthSvcService],
+  imports: [UserModule],
+  controllers: [],
+  providers: [],
 })
 export class KiaryAuthSvcModule {}

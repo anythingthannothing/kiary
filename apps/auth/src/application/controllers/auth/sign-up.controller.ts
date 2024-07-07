@@ -1,5 +1,5 @@
 import { Controller, Inject } from '@nestjs/common';
-import { SignUpService } from '../../../core/services/auth/sign-up.service';
+import { SignUpService } from '../../services/auth/sign-up.service';
 import { ISignUpService } from '../../../core/i-services/i-sign-up.service';
 import { AuthMapper } from '../../mappers/auth-mapper';
 import { GrpcMethod } from '@nestjs/microservices';
