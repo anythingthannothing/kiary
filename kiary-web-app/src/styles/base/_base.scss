@@ -3,6 +3,9 @@
 *::before {
   margin: 0;
   padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
   box-sizing: border-box;
 }
 
@@ -11,11 +14,28 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans 3", "Roboto", sans-serif;
   font-weight: 400;
-  line-height: 1.7;
-  color: $color-grey-dark;
-  padding: 3rem;
+  line-height: 1;
+  color: $default-font-color;
+  min-height: 100vh;
+}
 
-  box-sizing: border-box;
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }

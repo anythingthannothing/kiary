@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
 
 export default function RootLayout({
   children,
@@ -7,13 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <main
-        className={
-          "min-h-screen flex flex-col items-center justify-between p-4"
-        }
-      >
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer />
     </>
   );

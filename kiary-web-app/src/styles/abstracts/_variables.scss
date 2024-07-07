@@ -3,11 +3,83 @@ $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 
-$color-grey-dark: #777;
 $color-white: #fff;
 $color-black: #000;
 
-// GRID
-$grid-width: 114rem;
-$gutter-vertical: 8rem;
-$gutter-horizontal: 6rem;
+$color-gray-50: #f9fafb;
+$color-gray-100: #f3f4f6;
+$color-gray-200: #e5e7eb;
+$color-gray-300: #d1d5db;
+$color-gray-400: #9ca3af;
+$color-gray-500: #6b7280;
+$color-gray-600: #4b5563;
+$color-gray-700: #374151;
+$color-gray-800: #1f2937;
+$color-gray-900: #111827;
+$color-gray-950: #030712;
+
+$color-amber-50: #fffbeb;
+$color-amber-100: #fef3c7;
+$color-amber-200: #fde68a;
+$color-amber-300: #fcd34d;
+$color-amber-400: #fbbf24;
+$color-amber-500: #f59e0b;
+$color-amber-600: #d97706;
+$color-amber-700: #b45309;
+$color-amber-800: #92400e;
+$color-amber-900: #78350f;
+$color-amber-950: #451a03;
+
+$color-emerald-50: #ecfdf5;
+$color-emerald-100: #d1fae5;
+$color-emerald-200: #a7f3d0;
+$color-emerald-300: #6ee7b7;
+$color-emerald-400: #34d399;
+$color-emerald-500: #10b981;
+$color-emerald-600: #059669;
+$color-emerald-700: #047857;
+$color-emerald-800: #065f46;
+$color-emerald-900: #064e3b;
+$color-emerald-950: #022c22;
+
+$color-sky-50: #f0f9ff;
+$color-sky-100: #e0f2fe;
+$color-sky-200: #bae6fd;
+$color-sky-300: #7dd3fc;
+$color-sky-400: #38bdf8;
+$color-sky-500: #0ea5e9;
+$color-sky-600: #0284c7;
+$color-sky-700: #0369a1;
+$color-sky-800: #075985;
+$color-sky-900: #0c4a6e;
+$color-sky-950: #082f49;
+
+$color-violet-50: #f5f3ff;
+$color-violet-100: #ede9fe;
+$color-violet-200: #ddd6fe;
+$color-violet-300: #c4b5fd;
+$color-violet-400: #a78bfa;
+$color-violet-500: #8b5cf6;
+$color-violet-600: #7c3aed;
+$color-violet-700: #6d28d9;
+$color-violet-800: #5b21b6;
+$color-violet-900: #4c1d95;
+$color-violet-950: #2e1065;
+
+$color-pink-50: #f9fafb;
+$color-pink-100: #f3f4f6;
+$color-pink-200: #fbcfe8;
+$color-pink-300: #f9a8d4;
+$color-pink-400: #f472b6;
+$color-pink-500: #ec4899;
+$color-pink-600: #db2777;
+$color-pink-700: #be185d;
+$color-pink-800: #9d174d;
+$color-pink-900: #831843;
+$color-pink-950: #500724;
+
+$color-primary: $color-sky-600;
+
+// Font
+$default-font-size: 1.6rem;
+$default-font-color: $color-gray-700;
