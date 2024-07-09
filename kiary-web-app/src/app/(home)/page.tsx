@@ -54,8 +54,8 @@ export default function Home() {
           <div className={'col-span-1'}>
             <div className="feature-box">
               <AlbumSvg
-                width={100}
-                height={100}
+                width={80}
+                height={80}
                 className={'feature-box__icon'}
               />
               <h3 className={'heading-tertiary mb-1.5'}>Album</h3>
@@ -66,6 +66,25 @@ export default function Home() {
                 fuga odio reiciendis, sit voluptates.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="section-pricing">
+        <div className="center-text">
+          <h2 className="heading-secondary">asdasdasd</h2>
+        </div>
+        <div className={'grid grid-cols-3'}>
+          <div className="col-span-1">
+            <div className="card">
+              <div className={'card__side card__side--front'}>Card front</div>
+              <div className={'card__side card__side--back'}>Card back</div>
+            </div>
+          </div>
+          <div className="col-span-1">
+            <div className="card">Card test</div>
+          </div>
+          <div className="col-span-1">
+            <div className="card">Card test</div>
           </div>
         </div>
       </section>
