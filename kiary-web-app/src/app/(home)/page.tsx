@@ -76,16 +76,111 @@ export default function Home() {
         <div className={'grid grid-cols-3'}>
           <div className="col-span-1">
             <div className="card">
-              <div className={'card__side card__side--front'}>Card front</div>
-              <div className={'card__side card__side--back'}>Card back</div>
+              <div className={'card__side card__side--front'}>
+                <div className="card__picture card__picture--1">&nbsp;</div>
+                <h4 className="card__heading">
+                  <span className="card__heading-span card__heading-span--1">
+                    basic pricing
+                  </span>
+                </h4>
+                <div className="card__details">
+                  <ul>
+                    <li>up to 10 to dos a day</li>
+                    <li>free 50 images storage</li>
+                    <li>free 1 private album</li>
+                    <li>basic features</li>
+                    <li>and totally free</li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                className={'card__side card__side--back card__side--back--1'}
+              >
+                <div className="card__cta">
+                  <div className="card__price-box">
+                    <p className="card__price-only">Lifetime</p>
+                    <p className="card__price-value">Free</p>
+                  </div>
+                  <a href="#" className="btn btn--white">
+                    Sign up now!
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
           <div className="col-span-1">
-            <div className="card">Card test</div>
+            <div className="card">
+              <div className={'card__side card__side--front'}>
+                <div className="card__picture card__picture--2">&nbsp;</div>
+                <h4 className="card__heading">
+                  <span className="card__heading-span card__heading-span--2">
+                    standard pricing
+                  </span>
+                </h4>
+                <div className="card__details">
+                  <ul>
+                    <li>up to 20 to dos a day</li>
+                    <li>free 500 images storage</li>
+                    <li>free 5 private album</li>
+                    <li>???</li>
+                    <li>and advanced features</li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                className={'card__side card__side--back card__side--back--2'}
+              >
+                <div className="card__cta">
+                  <div className="card__price-box">
+                    <p className="card__price-only">only</p>
+                    <p className="card__price-value">1,900원/월</p>
+                  </div>
+                  <a href="#" className="btn btn--white">
+                    Sign up now!
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="col-span-1">
-            <div className="card">Card test</div>
+            <div className="card">
+              <div className={'card__side card__side--front'}>
+                <div className="card__picture card__picture--3">&nbsp;</div>
+                <h4 className="card__heading">
+                  <span className="card__heading-span card__heading-span--3">
+                    best pricing
+                  </span>
+                </h4>
+                <div className="card__details">
+                  <ul>
+                    <li>up to 50 to dos a day</li>
+                    <li>1000 images storage</li>
+                    <li>50 private album</li>
+                    <li>???</li>
+                    <li>all features</li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                className={'card__side card__side--back card__side--back--3'}
+              >
+                <div className="card__cta">
+                  <div className="card__price-box">
+                    <p className="card__price-only">only</p>
+                    <p className="card__price-value">2,900원/월</p>
+                  </div>
+                  <a href="#" className="btn btn--white">
+                    Sign up now!
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+        <div className="center-text mb-4">
+          <a href={'#'} className={'btn btn--green mt-4'}>
+            Or, Try free trial!
+          </a>
         </div>
       </section>
     </>
