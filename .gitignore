@@ -1,13 +1,15 @@
 # Dependencies
-/**/node_modules/*
+/**/node_modules
 
 # Environment
-.env.*
-!.env.example
+/**/.env.*
+/**/!.env.example
 
 # Build
 /**/dist
 /**/build
+/**/output
+/**/out
 
 # Testing
 /**/coverage
@@ -18,3 +20,23 @@
 
 # IDE
 /**/.idea
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+
+# vercel
+.vercel
+
+# next.js
+/kiary-web-app/.next
+next-env.d.ts
+
+# typescript
+*.tsbuildinfo
+
+# DB
+/pg-data

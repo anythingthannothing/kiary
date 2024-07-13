@@ -1,19 +1,28 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { join } from 'path';
 import { AppModule } from '../../auth/src/application/modules';
 
 async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     AppModule,
     {
-      transport: Transport.GRPC,
-      options: {
-        package: 'auth',
-        protoPath: join(__dirname, 'proto/auth.proto'),
-      },
+      transport: Transport.TCP,
     },
   );
+
+  return await app.listen();
 }
 
-bootstrap();
+const server = await (async () => {
+  return await bootstrap();
+})();
+
+const gracefulShutdown = async () => {
+  server.close(() => {
+    process.exit(0);
+  });
+};
+
+process.on('SIGTERM', gracefulShutdown);
+
+process.on('SIGINT', gracefulShutdown);
