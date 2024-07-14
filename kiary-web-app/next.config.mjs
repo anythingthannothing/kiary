@@ -14,11 +14,6 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'static.kiary.com',
                 pathname: '*'
-            },
-            {
-                protocol: 'https',
-                hostname: 'images.unsplash.com',
-                pathname: '*'
             }
         ]
     },

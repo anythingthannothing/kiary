@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { IMAGES } from '@/assets';
 import AlbumSvg from '@/components/AlbumSvg';
+import { IMAGES } from '@/assets';
 
 export default function Home() {
   return (
@@ -33,18 +33,21 @@ export default function Home() {
         </div>
         <div className="composition col-span-1">
           <Image
-            src={IMAGES.image1}
+            src={IMAGES.homeTodo}
             alt={'to do feature image'}
+            fill
             className="composition__photo composition__photo--p1"
           ></Image>
           <Image
-            src={IMAGES.image2}
+            src={IMAGES.homeAlbum}
             alt={'album feature image'}
+            fill
             className="composition__photo composition__photo--p2"
           ></Image>
           <Image
-            src={IMAGES.image3}
+            src={IMAGES.homeChat}
             alt={'chat feature image'}
+            fill
             className="composition__photo composition__photo--p3"
           ></Image>
         </div>
@@ -180,6 +183,59 @@ export default function Home() {
         <div className="center-text mb-4">
           <a href={'#'} className={'btn btn--green mt-4'}>
             Or, Try free trial!
+          </a>
+        </div>
+      </section>
+      <section className="section-stories">
+        <div className="center-text mb-2">
+          <h2 className="heading-secondary">
+            We make a day genuinely memorable
+          </h2>
+        </div>
+        <div className="row">
+          <div className="story">
+            <figure className="story__shape">
+              <img
+                src={
+                  'https://images.unsplash.com/photo-1664575602554-2087b04935a5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                }
+                alt={'hero image 1'}
+                className={'story__img'}
+              />
+              <figcaption className="story__caption">Mary Smith</figcaption>
+            </figure>
+            <div className="div story__text">
+              <h3 className="heading-tertiary mb-2">text</h3>
+              <p>
+                asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="story">
+            <figure className="story__shape">
+              <img
+                src={
+                  'https://images.unsplash.com/photo-1664575602554-2087b04935a5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                }
+                alt={'hero image 1'}
+                className={'story__img'}
+              />
+              <figcaption className="story__caption">Mary Smith</figcaption>
+            </figure>
+            <div className="div story__text">
+              <h3 className="heading-tertiary mb-2">text</h3>
+              <p>
+                asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="center-text mt-2">
+          <a href="" className="btn--text">
+            Discover more! &rarr;
           </a>
         </div>
       </section>
