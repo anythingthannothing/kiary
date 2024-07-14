@@ -33,7 +33,7 @@ services:
   web_app:
     build:
       context: ./kiary-web-app
-      dockerfile: Dockerfile
+      dockerfile: dockerfiles/web-app.Dockerfile
     ports:
       - "3000:3000"
     env_file:

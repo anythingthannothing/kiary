@@ -1,0 +1,20 @@
+# Deps
+**/node_modules
+
+# Env
+.env.*
+
+# NextJS
+kiary-web-app/.next
+kiary-web-app/build
+kiary-web-app/out
+kiary-web-app/dist
+
+# NestJS MSA
+**/dist
+
+# Test
+**/test
+
+# Docs
+README.md
