@@ -187,6 +187,12 @@ export default function Home() {
         </div>
       </section>
       <section className="section-stories">
+        <div className="bg-video">
+          <video src="" className="bg-video__content" autoPlay muted loop>
+            {/*<source src={} type={'video/mp4'} />*/}
+            {/*<source src={} type={'video/webm'} />*/}
+          </video>
+        </div>
         <div className="center-text mb-2">
           <h2 className="heading-secondary">
             We make a day genuinely memorable
@@ -237,6 +243,74 @@ export default function Home() {
           <a href="" className="btn--text">
             Discover more! &rarr;
           </a>
+        </div>
+      </section>
+      <section className="section-book">
+        <div className="row">
+          <div className="book">
+            <div className="book__form">
+              <form className="form">
+                <div className="center-text mb-8">
+                  <h2 className="heading-secondary">
+                    Subscribe our news letter
+                  </h2>
+                </div>
+                <div className="form__group">
+                  <input
+                    id={'name'}
+                    type="text"
+                    className="form__input"
+                    placeholder={'Full Name'}
+                    required
+                  />
+                  <label htmlFor="name" className="form__label">
+                    Full name
+                  </label>
+                </div>
+                <div className="form__group">
+                  <input
+                    id={'email'}
+                    type="email"
+                    className="form__input"
+                    placeholder={'Email address'}
+                    required
+                  />
+                  <label htmlFor="email" className="form__label">
+                    Email address
+                  </label>
+                </div>
+                <div className="form__group">
+                  <div className="form__radio-group">
+                    <input
+                      type="radio"
+                      className="form__radio-input"
+                      id={'free'}
+                      name={'grade'}
+                    />
+                    <label htmlFor="free" className="form__radio-label">
+                      <span className="form__radio-button"></span>
+                      Free
+                    </label>
+                  </div>
+                  <div className="form__radio-group">
+                    <input
+                      type="radio"
+                      className="form__radio-input"
+                      id={'premium'}
+                      name={'grade'}
+                    />
+                    <label htmlFor="premium" className="form__radio-label">
+                      <span className="form__radio-button"></span>
+                      Premium
+                    </label>
+                  </div>
+                </div>
+                <div className="form__group">
+                  <button className="btn btn--green">Next Step &rarr;</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </>
