@@ -313,6 +313,54 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="footer">
+        <div className="footer__logo-box">
+          <Image src={IMAGES.homeAlbum} alt="logo" className={'footer__logo'} />
+          <div className="row">
+            <div className="col-span-1">
+              <div className="footer__navigation">
+                <ul className="footer__list">
+                  <li className="footer__item">
+                    <a href="" className="footer__link">
+                      Company
+                    </a>
+                  </li>
+                  <li className="footer__item">
+                    <a href="" className="footer__link">
+                      Contact us
+                    </a>
+                  </li>
+                  <li className="footer__item">
+                    <a href="" className="footer__link">
+                      Careers
+                    </a>
+                  </li>
+                  <li className="footer__item">
+                    <a href="" className="footer__link">
+                      Privacy policy
+                    </a>
+                  </li>
+                  <li className="footer__item">
+                    <a href="" className="footer__link">
+                      Terms
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-span-1">
+              <p className="footer_copyright">
+                Built my{' '}
+                <a href="#" className="footer__link">
+                  KKU
+                </a>
+                . Copyright &copy; by Kiary.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
