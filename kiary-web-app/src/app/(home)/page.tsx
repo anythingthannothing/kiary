@@ -52,7 +52,7 @@ export default function Home() {
           ></Image>
         </div>
       </section>
-      <section className="section-features">
+      <section className="section-features" id={'section-tours'}>
         <div className="grid grid-cols-4">
           <div className={'col-span-1'}>
             <div className="feature-box">
@@ -104,7 +104,7 @@ export default function Home() {
                     <p className="card__price-only">Lifetime</p>
                     <p className="card__price-value">Free</p>
                   </div>
-                  <a href="#" className="btn btn--white">
+                  <a href="#popup" className="btn btn--white">
                     Sign up now!
                   </a>
                 </div>
@@ -138,7 +138,7 @@ export default function Home() {
                     <p className="card__price-only">only</p>
                     <p className="card__price-value">1,900원/월</p>
                   </div>
-                  <a href="#" className="btn btn--white">
+                  <a href="#popup" className="btn btn--white">
                     Sign up now!
                   </a>
                 </div>
@@ -172,7 +172,7 @@ export default function Home() {
                     <p className="card__price-only">only</p>
                     <p className="card__price-value">2,900원/월</p>
                   </div>
-                  <a href="#" className="btn btn--white">
+                  <a href="#popup" className="btn btn--white">
                     Sign up now!
                   </a>
                 </div>
@@ -361,6 +361,37 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <div className={'popup'} id={'popup'}>
+        <div className="popup__content">
+          <div className="popup__left">
+            <Image src={IMAGES.homeTodo} alt="logo" className={'popup__img'} />
+            <Image src={IMAGES.homeAlbum} alt="logo" className={'popup__img'} />
+          </div>
+          <div className="popup__right">
+            <a href={'#section-tours'} className="popup__close">
+              &times;
+            </a>
+            <h2 className="heading-secondary">Start Subscribe now</h2>
+            <h3 className="heading-tertiary">
+              Important &ndahs; Please read these terms before subscribe
+            </h3>
+            <div className="popup__text">
+              asldkjaskdljaasdadasdasdsasskljdlkasjdklasldkjaskdljaasdadasdasdsassk
+              ljdlkasjdklasldkjaskdljaasdadasdasdsasskljdlkasjdklasldkjaskdljaasdadasdasdsasskljd
+              lkasjdklasldkjaskdljaasdadasdasdsasskljdlkasjdklasldkjaskdljaasdadasdasdsasskljdlkasjdkl
+              asldkjaskdljaasdadasdasdsasskljdlkasjdklasldkjaskdljaasdadasdasdsasskljdasldkjaskdljaasdadasdasdsa
+              sskljdlkasjdklasldkjaskdljaasdadasdasdsasskljdlkasjdklasldkjaskdljaasdadasdasdsasskljdlkasjdklas
+              ldkjaskdljaasdadasdasdsasskljdlkasjdklasldkjaskdljaasdadasdasdsasskljdlkasjdklasldkjaskdljaasdadasdas
+              dsasskljdlkasjdklasldkjaskdljaasdadasdasdsasskljdlkasjdklasldkjaskdljaasdadasdas
+              dsasskljdlkasjdklasldkjaskdljaasdadasdasdsasskljdlkasjdklasldkjaskdljaasd
+              adasdasdsasskljdlkasjdklasldkjaskdljaasdadasdasdsasskljdlkasjdklasldk
+            </div>
+            <a href="" className="btn btn--green">
+              Subscribe now
+            </a>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
