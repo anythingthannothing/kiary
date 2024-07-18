@@ -1,6 +1,5 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { join } from 'path';
 import { AppModule } from './application/modules';
 
 async function bootstrap() {
@@ -8,10 +7,16 @@ async function bootstrap() {
     AppModule,
     {
       transport: Transport.TCP,
+      options: {
+        host: 'localhost',
+        port: 80,
+      },
     },
   );
 
-  app.listen();
+  app.listen().then(() => {
+    console.log(`Auth Service is listening on port 80`);
+  });
 }
 
 bootstrap();

@@ -61,6 +61,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/analytics/tsconfig.app.json"
       }
+    },
+    "nest-msa-library": {
+      "type": "library",
+      "root": "libs/nest-msa-library",
+      "entryFile": "index",
+      "sourceRoot": "libs/nest-msa-library/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/nest-msa-library/tsconfig.lib.json"
+      }
     }
   }
 }
