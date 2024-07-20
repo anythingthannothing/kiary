@@ -213,7 +213,10 @@ export default function Home() {
             <div className="div story__text">
               <h3 className="heading-tertiary mb-2">text</h3>
               <p>
-                asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
+                asdasdasdas asdasd asdas dasdasd asdasdasdasdas
+                dasdasdasdasdasda sdasdasdasdas dasda sdasdasdasdas
+                dasdasdasdasd asdasdasdasdasdas dasdasda sdasdasdas
+                dasdasdasdasd asdasdasdasd asdas dasdasdasd
               </p>
             </div>
           </div>
@@ -233,7 +236,10 @@ export default function Home() {
             <div className="div story__text">
               <h3 className="heading-tertiary mb-2">text</h3>
               <p>
-                asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
+                asdasdasdas asdasd asdas dasdasd asdasdasdasdas
+                dasdasdasdasdasda sdasdasdasdas dasda sdasdasdasdas
+                dasdasdasdasd asdasdasdasdasdas dasdasda sdasdasdas
+                dasdasdasdasd asdasdasdasd asdas
               </p>
             </div>
           </div>
