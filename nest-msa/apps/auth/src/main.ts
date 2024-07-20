@@ -9,13 +9,13 @@ async function bootstrap() {
       transport: Transport.TCP,
       options: {
         host: 'localhost',
-        port: 80,
+        port: 9000,
       },
     },
   );
 
   app.listen().then(() => {
-    console.log(`Auth Service is listening on port 80`);
+    console.log(`Auth Service is listening on port 9000`);
   });
 }
 

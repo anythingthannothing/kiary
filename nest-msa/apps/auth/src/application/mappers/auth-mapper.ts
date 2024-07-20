@@ -1,4 +1,4 @@
-import { UserEntity } from '../../core/entities';
+import { UserEntity } from '../../infra/entities';
 import { SignUpResponseDto } from '../dtos/sign-up-response.dto';
 import { SignUpRequestDto } from '../dtos/sign-up-request.dto';
 import { SignupServiceInputDto } from '../../core/i-services/i-sign-up.service';

@@ -19,11 +19,9 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@app/nest-msa-library": [
-        "libs/src",
         "libs/nest-msa-library/src"
       ],
       "@app/nest-msa-library/*": [
-        "libs/src/*",
         "libs/nest-msa-library/src/*"
       ]
     }

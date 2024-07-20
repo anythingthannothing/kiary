@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 import { UserEntity } from './user.entity';
 import { PasswordEntity } from './password.entity';
-import { AuthProviderEnum } from '../const/enums/auth-provider.enum';
+import { AuthProviderEnum } from '../../core/const/enums/auth-provider.enum';
 
 @Entity('account')
 export class AccountEntity {

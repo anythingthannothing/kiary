@@ -1,4 +1,4 @@
-import { UserEntity } from '../entities';
+import { UserEntity } from '../../infra/entities';
 
 export interface SignupServiceInputDto {
   email: string;
