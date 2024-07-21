@@ -1,6 +1,5 @@
 .card {
   perspective: 150rem;
-  -moz-perspective: 150rem;
   position: relative;
   height: 50rem;
 
@@ -13,6 +12,7 @@
     overflow: hidden;
     font-size: 2rem;
     transition: all .8s ease;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 4px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
@@ -144,9 +144,8 @@
     font-weight: 100;
   }
 
-
-
-  @include respond(tab-port) {
+  //@include respond(tab-port) {
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
     height: auto;
     border-radius: 4px;
     background-color: $color-white;
