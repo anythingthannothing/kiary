@@ -23,7 +23,7 @@ export class PasswordEntity {
     cascade: true,
     nullable: false,
   })
-  @JoinColumn()
+  @JoinColumn({ name: 'account_id' })
   account: AccountEntity;
 
   @Column({

@@ -1,6 +1,7 @@
 import {
   Column,
   Entity,
+  JoinColumn,
   ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
@@ -19,11 +20,19 @@ export class AccountEntity {
   accountId: number;
 
   @ManyToOne(() => UserEntity, (user) => user.accounts)
+  @JoinColumn({ name: 'user_id' })
   user: UserEntity;
+
+  @Column({ name: 'email', type: 'varchar', length: 50 })
+  email: string;
 
   @OneToOne(() => PasswordEntity, (password) => password.account)
   password: PasswordEntity;
 
-  @Column({ name: 'provider', enum: Object.values(AuthProviderEnum) })
+  @Column({
+    name: 'provider',
+    type: 'enum',
+    enum: Object.values(AuthProviderEnum),
+  })
   provider: AuthProviderEnum;
 }

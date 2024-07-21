@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { AppModule } from './application/modules';
+import { AppModule } from './application/app.module';
 
 async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
@@ -16,6 +16,10 @@ async function bootstrap() {
 
   app.listen().then(() => {
     console.log(`Auth Service is listening on port 9000`);
+  });
+
+  process.on('SIGINT', () => {
+    process.exit(0);
   });
 }
 

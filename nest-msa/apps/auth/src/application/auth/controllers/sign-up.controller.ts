@@ -1,11 +1,11 @@
 import { Controller, Inject } from '@nestjs/common';
-import { SignUpService } from '../../services/auth/sign-up.service';
+import { SignUpService } from '../services/sign-up.service';
 import { ISignUpService } from '../../../core/i-services/i-sign-up.service';
-import { AuthMapper } from '../../mappers/auth-mapper';
+import { AuthMapper } from '../auth-mapper';
 import { GrpcMethod } from '@nestjs/microservices';
-import { SignUpRequestDto } from '../../dtos/sign-up-request.dto';
+import { SignUpRequestDto } from '../dto/sign-up-request.dto';
 import { Metadata, ServerUnaryCall } from '@grpc/grpc-js';
-import { SignUpResponseDto } from '../../dtos/sign-up-response.dto';
+import { SignUpResponseDto } from '../dto/sign-up-response.dto';
 
 @Controller()
 export class SignUpController {

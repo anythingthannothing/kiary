@@ -18,6 +18,7 @@ ENV NODE_ENV production
 
 COPY --chown=node:node --from=deps ./app/node_modules ./node_modules
 COPY --chown=node:node ../nest-msa/apps/auth ./apps/auth
+COPY --chown=node:node ../nest-msa/libs ./libs
 COPY --chown=node:node ../nest-msa/nest-cli.json .
 COPY --chown=node:node ../nest-msa/tsconfig.json .
 

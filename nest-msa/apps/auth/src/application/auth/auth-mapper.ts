@@ -1,6 +1,6 @@
 import { UserEntity } from '../../infra/entities';
-import { SignUpResponseDto } from '../dtos/sign-up-response.dto';
-import { SignUpRequestDto } from '../dtos/sign-up-request.dto';
+import { SignUpResponseDto } from './dto/sign-up-response.dto';
+import { SignUpRequestDto } from './dto/sign-up-request.dto';
 import { SignupServiceInputDto } from '../../core/i-services/i-sign-up.service';
 
 export class AuthMapper {

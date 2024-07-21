@@ -8,6 +8,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { AccountEntity } from './account.entity';
+import { ImageEntity } from './image.entity';
 
 @Entity('user')
 export class UserEntity {
@@ -45,4 +46,7 @@ export class UserEntity {
 
   @OneToMany(() => AccountEntity, (account) => account.user)
   accounts: AccountEntity[];
+
+  @OneToMany(() => ImageEntity, (image) => image.user)
+  images: ImageEntity[];
 }

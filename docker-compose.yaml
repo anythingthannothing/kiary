@@ -1,14 +1,11 @@
-version: "3.1"
-
 services:
-  nginx:
-
-
-  postgres:
+#  nginx:
+  kiary-dev-postgres:
     image: postgres:16.3-alpine
+    container_name: kiary-dev-postgres
     restart: always
     volumes:
-      - ./pg-data:/var/lib/postgresql/data
+      - ./data/pg-data:/var/lib/postgresql/data
     ports:
       - "15432:5432"
     environment:
@@ -16,27 +13,40 @@ services:
       POSTGRES_PASSWORD: "postgres"
       POSTGRES_DB: "postgres"
 
-  mongo:
-    image: mongo:2.4.11
+#  mongo:
+#    image: mongo:2.4.11
+#    restart: always
+#    env_file:
+#      - .env.mongo
+#    volumes:
+#      - ./mongo-data:/data/db
+#
+  kiary-dev-redis-main:
+    image: "redis:7.2.5-alpine"
     restart: always
-    env_file:
-      - .env.mongo
+    hostname: kiary-dev-redis-main
     volumes:
-      - ./mongo-data:/data/db
-
-  redis:
-    image: "redis:alpine"
-    restart: always
+      - ./data/redis_master:/data
     ports:
       - "16379:6379"
 
-  web_app:
-    build:
-      context: ./kiary-web-app
-      dockerfile: dockerfiles/web-app.Dockerfile
+  kiary-dev-redis-worker:
+    image: "redis:7.2.5-alpine"
+    restart: always
+    hostname: kiary-dev-redis-worker
+    volumes:
+      - ./data/redis_worker:/data
     ports:
-      - "3000:3000"
-    env_file:
-      - kiary-web-app/.env.local
-    depends_on:
-      - mongo
+      - "16380:6379"
+    command: redis-server --slaveof kiary-dev-redis-main 6379
+#
+#  web_app:
+#    build:
+#      context: ./kiary-web-app
+#      dockerfile: dockerfiles/web-app.Dockerfile
+#    ports:
+#      - "3000:3000"
+#    env_file:
+#      - kiary-web-app/.env.local
+#    depends_on:
+#      - mongo
