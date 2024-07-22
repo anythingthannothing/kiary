@@ -6,7 +6,7 @@ import { IMAGES } from '@/assets';
 export default function Home() {
   return (
     <>
-      <header className={'header'}>
+      <header className={'home-header'}>
         <div className={'center-text mb-8'}>
           <h2 className="heading-secondary">Kiary</h2>
         </div>
