@@ -1,8 +1,8 @@
-import Footer from "@/components/Footer";
-import { Metadata } from "next";
+import Footer from '@/components/footer';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Kiary | Login",
+  title: 'Kiary | Login',
 };
 
 export default function AuthLayout({
@@ -13,7 +13,7 @@ export default function AuthLayout({
   return (
     <main
       className={
-        "min-h-screen mx-auto flex flex-col items-center justify-between"
+        'min-h-screen mx-auto flex flex-col items-center justify-between'
       }
     >
       {children}

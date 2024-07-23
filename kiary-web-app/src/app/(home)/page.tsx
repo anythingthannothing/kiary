@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import AlbumSvg from '@/components/AlbumSvg';
+import AlbumSvg from '@/components/album-svg';
 import { IMAGES } from '@/assets';
 
 export default function Home() {

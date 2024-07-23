@@ -1,5 +1,4 @@
-import MainHeader from "@/components/MainHeader";
-import type { Metadata } from "next";
+import MainHeader from '@/components/main-header';
 
 export default function MainLayout({
   children,
