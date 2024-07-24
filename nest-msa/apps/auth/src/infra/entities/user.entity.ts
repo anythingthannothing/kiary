@@ -20,14 +20,6 @@ export class UserEntity {
   userId: number;
 
   @Column('varchar', {
-    name: 'email',
-    length: 50,
-    nullable: false,
-    unique: true,
-  })
-  email: string;
-
-  @Column('varchar', {
     name: 'nickname',
     nullable: false,
     unique: true,
