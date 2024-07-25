@@ -16,6 +16,9 @@ export class ImageEntity {
   })
   imageId: string;
 
+  @Column({ name: 'user_id', nullable: false })
+  userId: number;
+
   @ManyToOne(() => UserEntity, (user) => user.images)
   @JoinColumn({ name: 'user_id' })
   user: UserEntity;

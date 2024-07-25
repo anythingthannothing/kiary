@@ -1,6 +1,5 @@
 import {
   Column,
-  CreateDateColumn,
   Entity,
   JoinColumn,
   ManyToOne,
@@ -17,6 +16,9 @@ export class RefreshTokenEntity {
   })
   refreshTokenId: string;
 
+  @Column({ name: 'user_id', type: 'int', nullable: false })
+  user_id: number;
+
   @ManyToOne(() => UserEntity, (user) => user.accounts)
   @JoinColumn({ name: 'user_id' })
   user: UserEntity;
@@ -27,6 +29,6 @@ export class RefreshTokenEntity {
   @Column({ name: 'expires_at', type: 'timestamp', nullable: false })
   expiresAt: Date;
 
-  @CreateDateColumn({ name: 'created_at', type: 'timestamp' })
+  @Column({ name: 'created_at', type: 'timestamp' })
   createdAt: Date;
 }

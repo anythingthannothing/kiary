@@ -13,7 +13,6 @@ export class AuthMapper {
   public static mapToSignUpResponseDto(user: UserEntity): SignUpResponseDto {
     return {
       userId: user.userId,
-      email: user.email,
     };
   }
 }

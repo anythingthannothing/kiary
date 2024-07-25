@@ -19,6 +19,9 @@ export class PasswordEntity {
   })
   passwordId: number;
 
+  @Column({ name: 'account_id', type: 'int', nullable: false })
+  accountId: number;
+
   @OneToOne(() => AccountEntity, (account) => account.password, {
     cascade: true,
     nullable: false,
