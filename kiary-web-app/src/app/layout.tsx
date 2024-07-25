@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Source_Sans_3 } from 'next/font/google';
 import '@/styles/main.scss';
 import NavigationButton from '@/components/navigation-button';
+import Providers from '@/context/providers';
 
 const sourceSans = Source_Sans_3({ subsets: ['latin'] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sourceSans.className}`}>
-        <NavigationButton />
-        {children}
+        <Providers>
+          <NavigationButton />
+          {children}
+        </Providers>
       </body>
     </html>
   );
