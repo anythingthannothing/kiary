@@ -1,5 +1,41 @@
+.w-full {
+  width: 100% !important;
+}
+
+.relative {
+  position: relative !important;
+}
+
+.absolute {
+  position: absolute !important;
+}
+
+.min-h-screen {
+  min-height: 100vh !important;
+}
+
+.mx-auto {
+  margin: 0 auto !important;
+}
+
 .flex {
   display: flex !important;
+}
+
+.flex-col {
+  flex-direction: column !important;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.justify-between {
+  justify-content: space-between !important;
+}
+
+.items-center {
+  align-items: center !important;
 }
 
 .center-text {

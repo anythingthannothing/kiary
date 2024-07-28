@@ -1,5 +1,10 @@
 import { Metadata } from 'next';
 import LoginForm from '@/components/login-form';
+import Heading from '@/components/heading';
+import HLine from '@/components/h-line';
+import Container from '@/components/layout/container';
+import GoogleLoginButton from '@/components/button/google-login-button';
+import GithubLoginButton from '@/components/button/github-login-button';
 
 export const metadata: Metadata = {
   title: 'Kiary | Login',
@@ -7,16 +12,15 @@ export const metadata: Metadata = {
 
 export default async function LoginPage() {
   return (
-    <section className={'py-8'}>
-      <p className={'w-full text-start block mb-8'}>Kiary</p>
-      <div
-        className={
-          'sm:max-w-[90%] w-[720px] flex flex-col gap-8 border border-gray-200 p-8 rounded-2xl'
-        }
-      >
-        <h2>Sign in to your account</h2>
-        <LoginForm />
+    <Container>
+      <Heading as={'h1'}>Sign in</Heading>
+      <p>to continue to Kiary</p>
+      <LoginForm />
+      <HLine>or</HLine>
+      <div className={'flex flex-col'}>
+        <GoogleLoginButton />
+        <GithubLoginButton />
       </div>
-    </section>
+    </Container>
   );
 }

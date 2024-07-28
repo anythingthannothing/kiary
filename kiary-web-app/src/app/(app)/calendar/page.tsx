@@ -1,7 +1,7 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Kiary | Calendar",
+  title: 'Calendar',
 };
 
 export default function CalendarPage() {

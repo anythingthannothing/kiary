@@ -1,9 +1,4 @@
 import Footer from '@/components/layout/footer';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Kiary | Login',
-};
 
 export default function AuthLayout({
   children,
