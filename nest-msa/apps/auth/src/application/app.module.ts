@@ -4,7 +4,5 @@ import { AppConfigModule } from './config/app-config.module';
 
 @Module({
   imports: [AuthModule, AppConfigModule],
-  controllers: [],
-  providers: [],
 })
 export class AppModule {}
