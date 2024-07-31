@@ -1,11 +1,14 @@
 import React from 'react';
 import Button from '@/components/ui/button';
+import { FcGoogle } from 'react-icons/fc';
 
 function GoogleLoginButton() {
   return (
     <Button>
-      <span>icon</span>
-      <p>Continue with Google</p>
+      <span>
+        <FcGoogle />
+      </span>
+      <span>Continue with Google</span>
     </Button>
   );
 }

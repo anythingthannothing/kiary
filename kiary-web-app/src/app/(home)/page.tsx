@@ -181,7 +181,7 @@ export default function Home() {
           </div>
         </div>
         <div className="center-text mb-4">
-          <a href={'#'} className={'btn btn--green mt-4'}>
+          <a href={'/sign-up'} className={'btn btn--green mt-4'}>
             Or, Try free trial!
           </a>
         </div>
@@ -392,7 +392,7 @@ export default function Home() {
               dsasskljdlkasjdklasldkjaskdljaasdadasdasdsasskljdlkasjdklasldkjaskdljaasd
               adasdasdsasskljdlkasjdklasldkjaskdljaasdadasdasdsasskljdlkasjdklasldk
             </div>
-            <a href="" className="btn btn--green">
+            <a href="/sign-up" className="btn btn--green">
               Subscribe now
             </a>
           </div>

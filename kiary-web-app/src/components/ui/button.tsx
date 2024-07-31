@@ -1,11 +1,16 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
 interface Props {
-  children: React.ReactNode;
+  type?: 'button' | 'submit';
+  children: ReactNode;
 }
 
-function Button({ children }: Props) {
-  return <button>{children}</button>;
-}
+const Button = ({ type = 'button', children }: Props) => {
+  return (
+    <button type={type} className={'btn'}>
+      {children}
+    </button>
+  );
+};
 
 export default Button;
