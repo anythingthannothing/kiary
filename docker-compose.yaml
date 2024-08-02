@@ -30,23 +30,19 @@ services:
     ports:
       - "16379:6379"
 
-  kiary-dev-redis-worker:
-    image: "redis:7.2.5-alpine"
-    restart: always
-    hostname: kiary-dev-redis-worker
-    volumes:
-      - ./data/redis_worker:/data
-    ports:
-      - "16380:6379"
-    command: redis-server --slaveof kiary-dev-redis-main 6379
-#
 #  web_app:
 #    build:
 #      context: ./kiary-web-app
-#      dockerfile: dockerfiles/web-app.Dockerfile
+#      dockerfile: dockerfiles/web-app.dotnet-msa-todo.development.Dockerfile
 #    ports:
 #      - "3000:3000"
 #    env_file:
 #      - kiary-web-app/.env.local
 #    depends_on:
 #      - mongo
+
+  kiary-todo:
+    image: kiary-todo
+    build:
+      context: ./dotnet-msa/Todo
+      dockerfile: dockerfiles/dotnet-msa-todo.development.Dockerfile

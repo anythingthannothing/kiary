@@ -2,20 +2,50 @@
 **/node_modules
 
 # Env
-.env.*
-
-# NextJS
-kiary-web-app/.next
-kiary-web-app/build
-kiary-web-app/out
-kiary-web-app/dist
-
-# NestJS MSA
-**/dist
+**/.env*
+**/!.env.example
 
 # Test
 **/test
 
+# Build
+**/dist
+**/build
+**/out
+**/bin
+kiary-web-app/.next
+
+# Docker
+**/.dockerignore
+**/docker-compose*
+
+# VCS
+**/.git
+**/.gitignore
+**/*.Dockerfile
+
+# IDE
+**/.vs
+**/.vscode
+**/.idea
+
 # Docs
 docs
 README.md
+
+# NestJS MSA
+
+# .Net
+**/.settings
+**/.project
+**/.toolstarget
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/azds.yaml
+**/charts
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE

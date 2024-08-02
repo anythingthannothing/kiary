@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Todo</RootNamespace>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+      <Content Include="..\..\dockerfiles\dotnet-msa-todo.development.Dockerfile">
+              <Link>dotnet-msa-todo.development.Dockerfile</Link>
+            </Content>
+      <Content Update="appsettings.Development.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="src\Application\Mappers\" />
+      <Folder Include="src\Application\Services\" />
+      <Folder Include="src\Core\Constants\" />
+      <Folder Include="src\Core\Domains\" />
+      <Folder Include="src\Core\Helpers\" />
+      <Folder Include="src\Core\Options\" />
+      <Folder Include="src\Core\RepositoryContracts\" />
+      <Folder Include="src\Core\ServiceContracts\" />
+      <Folder Include="src\Infrastructure\Repositories\" />
+    </ItemGroup>
+
+</Project>

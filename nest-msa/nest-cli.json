@@ -44,15 +44,6 @@
         "watchAssets": true
       }
     },
-    "to-do": {
-      "type": "application",
-      "root": "apps/to-do",
-      "entryFile": "src/main",
-      "sourceRoot": "./apps/to-do/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/to-do/tsconfig.app.json"
-      }
-    },
     "analytics": {
       "type": "application",
       "root": "apps/analytics",
