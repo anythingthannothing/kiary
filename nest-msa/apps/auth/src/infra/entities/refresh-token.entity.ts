@@ -29,6 +29,6 @@ export class RefreshTokenEntity {
   @Column({ name: 'expires_at', type: 'timestamp', nullable: false })
   expiresAt: Date;
 
-  @Column({ name: 'created_at', type: 'timestamp' })
-  createdAt: Date;
+  @Column({ name: 'is_valid', type: 'bit', nullable: false })
+  isValid: boolean;
 }

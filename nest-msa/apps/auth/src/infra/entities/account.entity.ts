@@ -3,12 +3,13 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { UserEntity } from './user.entity';
 import { PasswordEntity } from './password.entity';
-import { AuthProviderEnum } from '../../core/const/enums/auth-provider.enum';
+import { ProviderEntity } from './provier.entity';
 
 @Entity('account')
 export class AccountEntity {
@@ -38,12 +39,8 @@ export class AccountEntity {
   @OneToOne(() => PasswordEntity, (password) => password.account)
   password: PasswordEntity;
 
-  @Column({
-    name: 'provider',
-    type: 'enum',
-    enum: Object.values(AuthProviderEnum),
-  })
-  provider: string;
+  @OneToMany(() => ProviderEntity, (provider) => provider.account)
+  providers: ProviderEntity[];
 
   @Column({
     name: 'created_at',
