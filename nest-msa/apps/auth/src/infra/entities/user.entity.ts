@@ -10,7 +10,7 @@ import {
 import { AccountEntity } from './account.entity';
 import { ImageEntity } from './image.entity';
 
-@Entity('user')
+@Entity({ schema: 'auth', name: 'user' })
 export class UserEntity {
   @PrimaryGeneratedColumn('increment', {
     name: 'user_id',
@@ -33,8 +33,8 @@ export class UserEntity {
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 
-  @DeleteDateColumn({ name: 'deleted_at' })
-  deletedAt: Date;
+  @DeleteDateColumn({ name: 'deleted_at', nullable: true })
+  deletedAt?: Date;
 
   @OneToMany(() => AccountEntity, (account) => account.user)
   accounts: AccountEntity[];

@@ -1,5 +1,6 @@
 import { UserDomain } from './user.domain';
 import { PasswordDomain } from './password.domain';
+import { ProviderDomain } from './provider.domain';
 
 export interface AccountDomain {
   accountId: number;
@@ -7,7 +8,7 @@ export interface AccountDomain {
   email: string;
   user?: UserDomain;
   password?: PasswordDomain;
-  provider: 'local' | 'google' | 'github' | 'kakao';
+  providers?: ProviderDomain[];
   createdAt: Date;
   deletedAt: Date;
 }

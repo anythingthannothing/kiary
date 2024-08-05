@@ -8,7 +8,7 @@ import {
 import { AccountEntity } from './account.entity';
 import { AuthProviderEnum } from '../../core/const/enums/auth-provider.enum';
 
-@Entity('provider')
+@Entity({ schema: 'auth', name: 'provider' })
 export class ProviderEntity {
   @PrimaryGeneratedColumn('increment', {
     name: 'provider_id',

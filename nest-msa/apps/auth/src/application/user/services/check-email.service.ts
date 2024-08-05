@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ICheckEmailService } from '../../../core/i-services/i-check-email.service';
-import { ICheckEmailRepository } from '../../../core/i-repositories/user';
-import { CheckEmailRepository } from '../../../infra/persistence/repositories/user/check-email.repository';
+import { ICheckEmailRepository } from '../../../core/i-repositories/auth';
+import { CheckEmailRepository } from '../../../infra/persistence/repositories/auth/check-email.repository';
 
 @Injectable()
 export class CheckEmailService implements ICheckEmailService {

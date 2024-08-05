@@ -1,4 +1,4 @@
-import { ICheckEmailRepository } from '../../../../core/i-repositories/user';
+import { ICheckEmailRepository } from '../../../../core/i-repositories/auth';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { AccountEntity } from '../../../entities';
@@ -9,7 +9,7 @@ export class CheckEmailRepository implements ICheckEmailRepository {
     private readonly accountRepository: Repository<AccountEntity>,
   ) {}
 
-  async execute(email): Promise<boolean> {
+  async execute(email: string): Promise<boolean> {
     return await this.accountRepository.exists({ where: { email } });
   }
 }

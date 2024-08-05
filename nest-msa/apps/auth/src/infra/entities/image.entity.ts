@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 import { UserEntity } from './user.entity';
 
-@Entity('image')
+@Entity({ schema: 'file', name: 'image' })
 export class ImageEntity {
   @PrimaryGeneratedColumn('increment', {
     name: 'image_id',

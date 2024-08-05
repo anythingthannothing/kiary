@@ -1,7 +1,5 @@
 import {
   Column,
-  CreateDateColumn,
-  DeleteDateColumn,
   Entity,
   OneToOne,
   PrimaryGeneratedColumn,
@@ -10,7 +8,7 @@ import {
 } from 'typeorm';
 import { AccountEntity } from './account.entity';
 
-@Entity('password')
+@Entity({ schema: 'auth', name: 'password' })
 export class PasswordEntity {
   @PrimaryGeneratedColumn('increment', {
     name: 'password_id',

@@ -5,7 +5,7 @@ import { AccountEntity, UserEntity } from '../../infra/entities';
 import { PasswordEntity } from '../../infra/entities/password.entity';
 import { ImageEntity } from '../../infra/entities/image.entity';
 import { RefreshTokenEntity } from '../../infra/entities/refresh-token.entity';
-import { ProviderEntity } from '../../infra/entities/provier.entity';
+import { ProviderEntity } from '../../infra/entities/provider.entity';
 
 @Injectable()
 export class AuthDbConfigService implements TypeOrmOptionsFactory {
@@ -19,7 +19,7 @@ export class AuthDbConfigService implements TypeOrmOptionsFactory {
       username: this.configService.get<string>('PG_DB_USERNAME'),
       password: this.configService.get<string>('PG_DB_PASSWORD'),
       database: this.configService.get<string>('PG_DB_DATABASE'),
-      schema: this.configService.get<string>('PG_DB_SCHEMA'),
+      // schema: 'auth',
       synchronize: this.configService.get<string>('NODE_ENV') === 'test',
       logging: this.configService.get<string>('NODE_ENV') === 'development',
       poolSize:

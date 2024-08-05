@@ -9,10 +9,11 @@ import {
 } from 'typeorm';
 import { UserEntity } from './user.entity';
 import { PasswordEntity } from './password.entity';
-import { ProviderEntity } from './provier.entity';
+import { ProviderEntity } from './provider.entity';
+import { AccountDomain } from '../../core/domain';
 
-@Entity('account')
-export class AccountEntity {
+@Entity({ schema: 'auth', name: 'account' })
+export class AccountEntity implements AccountDomain {
   @PrimaryGeneratedColumn('increment', {
     name: 'account_id',
     type: 'int',
@@ -37,7 +38,7 @@ export class AccountEntity {
   email: string;
 
   @OneToOne(() => PasswordEntity, (password) => password.account)
-  password: PasswordEntity;
+  password?: PasswordEntity;
 
   @OneToMany(() => ProviderEntity, (provider) => provider.account)
   providers: ProviderEntity[];

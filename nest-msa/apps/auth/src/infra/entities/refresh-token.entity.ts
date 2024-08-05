@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 import { UserEntity } from './user.entity';
 
-@Entity('refresh_token')
+@Entity({ schema: 'auth', name: 'refresh_token' })
 export class RefreshTokenEntity {
   @PrimaryGeneratedColumn('increment', {
     name: 'refresh_token_id',
