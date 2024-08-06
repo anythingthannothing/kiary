@@ -4,6 +4,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import TextInput from '@/components/form/text-input';
 import Button from '@/components/ui/button';
+import { useSignUp } from '@/features/auth/sign-up/use-sign-up';
+import PasswordInput from '@/components/form/password-input';
 
 interface FormValues {
   email: string;
@@ -18,15 +20,18 @@ function SignUpForm() {
     formState: { errors },
   } = useForm<FormValues>();
 
+  const { mutate: signUp, data, isPending } = useSignUp();
+
   const onSubmit = async () => {
-    alert('submit');
+    // signUp()
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <TextInput name={'email'} label={'Email'} register={register} />
-      <TextInput name={'password'} label={'Password'} register={register} />
-      <TextInput
+      <TextInput name={'nickname'} label={'Nickname'} register={register} />
+      <PasswordInput name={'password'} label={'Password'} register={register} />
+      <PasswordInput
         name={'confirm-password'}
         label={'Confirm Password'}
         register={register}

@@ -10,8 +10,8 @@ export default function middleware(req: NextRequest) {
 
   // const isPublic = publicRoutes.includes(nextUrl.pathname);
   // const isAuthRoute = authRoutes.includes(nextUrl.pathname);
-  // const isProfileComplete = req.auth?.user.profileComplete;
-  // const isAdmin = req.auth?.user.role === "ADMIN";
+  // const isProfileComplete = req.auth?.auth.profileComplete;
+  // const isAdmin = req.auth?.auth.role === "ADMIN";
   const isAdminRoute = pathname.startsWith('/admin');
 
   // if (isPublic || isAdmin) {

@@ -1,16 +1,11 @@
 import React, { ReactNode } from 'react';
 
 interface Props {
-  children?: ReactNode;
+  children: ReactNode;
 }
 
 function HLine({ children }: Props) {
-  return (
-    <div className={'center-text relative'}>
-      <div className={'h-line absolute'}></div>
-      {children && <span className={'h-line__text'}>{children}</span>}
-    </div>
-  );
+  return <div className={'h-line'}>{children}</div>;
 }
 
 export default HLine;
