@@ -17,7 +17,7 @@ export class RefreshTokenEntity {
   refreshTokenId: string;
 
   @Column({ name: 'user_id', type: 'int', nullable: false })
-  user_id: number;
+  userId: number;
 
   @ManyToOne(() => UserEntity, (user) => user.accounts)
   @JoinColumn({ name: 'user_id' })
@@ -30,5 +30,5 @@ export class RefreshTokenEntity {
   expiresAt: Date;
 
   @Column({ name: 'is_valid', type: 'bit', nullable: false })
-  isValid: boolean;
+  isValid: number;
 }

@@ -4,7 +4,7 @@ import {
   SignupServiceInputDto,
 } from '../../../core/i-services/i-sign-up.service';
 import { UserDomain } from '../../../core/domain';
-import { IEncryptService } from '../../../core/i-services/i-encrypt-service';
+import { IEncryptService } from '../../../core/i-services/i-encrypt.service';
 import { BcryptService } from './bcrypt.service';
 import { CheckEmailRepository } from '../../../infra/persistence/repositories/auth/check-email.repository';
 import { ICheckEmailRepository } from '../../../core/i-repositories/auth';

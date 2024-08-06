@@ -1,8 +1,6 @@
-import { UserEntity } from '../../infra/entities';
 import { SignUpResponseDto } from './dto/sign-up-response.dto';
 import { SignUpRequestDto } from './dto/sign-up-request.dto';
 import { SignupServiceInputDto } from '../../core/i-services/i-sign-up.service';
-import { UserDomain } from '../../core/domain';
 
 export class AuthMapper {
   public static mapToSignUpServiceInputDto(
@@ -11,9 +9,14 @@ export class AuthMapper {
     return { email: dto.email, password: dto.password, nickname: dto.nickname };
   }
 
-  public static mapToSignUpResponseDto(user: UserDomain): SignUpResponseDto {
+  public static mapToSignUpResponseDto(dto: {
+    tokenExpiresIn: number;
+    nickname: string;
+  }): SignUpResponseDto {
     return {
-      userId: user.userId,
+      tokenExpiresAt: new Date(Date.now() + dto.tokenExpiresIn * 1000),
+      nickname: dto.nickname,
+      profileUrl: null,
     };
   }
 }

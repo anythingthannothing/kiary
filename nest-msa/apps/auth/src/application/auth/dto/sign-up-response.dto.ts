@@ -1,3 +1,5 @@
 export interface SignUpResponseDto {
-  userId: number;
+  tokenExpiresAt: Date;
+  nickname: string;
+  profileUrl?: string;
 }

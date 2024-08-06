@@ -17,6 +17,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import {
   AccountEntity,
   PasswordEntity,
+  RefreshTokenEntity,
   UserEntity,
 } from '../../infra/entities';
 import { BcryptService } from './services/bcrypt.service';
@@ -24,10 +25,17 @@ import { CreateAccountRepository } from '../../infra/persistence/repositories/au
 import { CreatePasswordRepository } from '../../infra/persistence/repositories/auth/create-password.repository';
 import { CreateUserRepository } from '../../infra/persistence/repositories/user/create-user.repository';
 import { SignUpService } from './services/sign-up.service';
+import { SaveRefreshTokenService } from './services/save-refresh-token.service';
+import { CreateRefreshTokenRepository } from '../../infra/persistence/repositories/auth/create-refresh-token.repository';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([AccountEntity, PasswordEntity, UserEntity]),
+    TypeOrmModule.forFeature([
+      AccountEntity,
+      PasswordEntity,
+      UserEntity,
+      RefreshTokenEntity,
+    ]),
   ],
   controllers: [
     SignUpController,
@@ -49,6 +57,8 @@ import { SignUpService } from './services/sign-up.service';
     CreatePasswordRepository,
     CreateUserRepository,
     SignUpService,
+    SaveRefreshTokenService,
+    CreateRefreshTokenRepository,
   ],
 })
 export class AuthModule {}
