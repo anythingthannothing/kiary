@@ -1,0 +1,16 @@
+.text-input {
+  padding: .5rem 1rem;
+  gap: .2rem;
+  background-color: $color-white;
+  border-radius: .5rem;
+
+  label {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  input {
+  font-size: 1.2rem;
+    padding: .2rem .4rem;
+  }
+}

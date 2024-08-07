@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { UseFormRegister } from 'react-hook-form';
 import { BiHide, BiShow } from 'react-icons/bi';
@@ -6,36 +8,40 @@ interface Props {
   name: string;
   label: string;
   register: UseFormRegister<any>;
-  errors?: any;
+  error?: any;
 }
 
-function PasswordInput({ name, label, register, errors, ...props }: Props) {
+function PasswordInput({ name, label, register, error, ...props }: Props) {
   const [showPassword, setShowPassword] = React.useState(false);
   return (
-    <div className={'flex flex-col relative'}>
-      <label htmlFor={name}>{label}</label>
-      <input
-        type={showPassword ? 'text' : 'password'}
-        id={name}
-        {...register(name)}
-        {...props}
-        autoComplete={'off'}
-      />
-      {errors && errors[name] && <p>{errors[name].message}</p>}
-      <div className={'absolute password-toggle'}>
-        {showPassword ? (
-          <BiShow
-            className={'h-5 w-5'}
-            onClick={() => setShowPassword(!showPassword)}
+    <>
+      <div className={'input-wrapper'}>
+        <div className={'flex flex-col relative text-input'}>
+          <label htmlFor={name}>{label}</label>
+          <input
+            type={showPassword ? 'text' : 'password'}
+            id={name}
+            {...register(name)}
+            {...props}
+            autoComplete={'off'}
           />
-        ) : (
-          <BiHide
-            className={'h-5 w-5'}
-            onClick={() => setShowPassword(!showPassword)}
-          />
-        )}
+          <div className={'absolute password-toggle'}>
+            {showPassword ? (
+              <BiShow
+                className={'h-5 w-5'}
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            ) : (
+              <BiHide
+                className={'h-5 w-5'}
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            )}
+          </div>
+        </div>
+        {error && <p className={'error-message ml-sm'}>{error.message}</p>}
       </div>
-    </div>
+    </>
   );
 }
 
