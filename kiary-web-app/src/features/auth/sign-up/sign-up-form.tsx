@@ -8,6 +8,8 @@ import Button from '@/components/ui/button';
 import { useSignUp } from '@/features/auth/sign-up/use-sign-up';
 import PasswordInput from '@/components/form/password-input';
 import { SignUpSchema } from '@/features/auth/sign-up/sign-up-schema';
+import { useAuthStore } from '@/stores';
+import { useRouter } from 'next/navigation';
 
 export interface FormValues {
   email: string;
@@ -17,19 +19,37 @@ export interface FormValues {
 }
 
 function SignUpForm() {
+  const router = useRouter();
+  const { login } = useAuthStore();
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     setError,
   } = useForm<FormValues>({ resolver: zodResolver(SignUpSchema) });
 
-  const { mutate: signUp, data, isPending } = useSignUp();
+  const { mutate: signUp, data: response, isPending } = useSignUp();
 
   const onSubmit = async (data: FormValues) => {
-    console.log(data);
-    console.log(errors);
-    // signUp()
+    const { email, nickname, password } = data;
+    signUp(
+      { email, nickname, password },
+      {
+        onSuccess: (response) => {
+          console.log(response);
+          login({
+            nickname: response.data.nickname,
+            profileUrl: response.data.profileUrl,
+            accessTokenExpiresAt: response.data.accssTokenExpiresAt,
+          });
+          // router.push('/dashboard');
+        },
+        onError: (err) => {
+          console.log(err);
+        },
+      },
+    );
   };
 
   return (
@@ -58,7 +78,9 @@ function SignUpForm() {
         register={register}
         error={errors.confirmPassword}
       />
-      <Button type={'submit'}>Sign Up</Button>
+      <Button type={'submit'} disabled={isPending || !isValid}>
+        Sign Up
+      </Button>
     </form>
   );
 }

@@ -3,6 +3,9 @@ import { Source_Sans_3 } from 'next/font/google';
 import '@/styles/main.scss';
 import NavigationButton from '@/components/navigation-button';
 import Providers from '@/context/providers';
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
 
 const sourceSans = Source_Sans_3({ subsets: ['latin'] });
 

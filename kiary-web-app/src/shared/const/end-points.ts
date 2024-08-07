@@ -1,9 +1,9 @@
 const BASE_URL =
   process.env.NODE_ENV === 'development'
-    ? 'http://localhost:8000'
+    ? 'http://localhost:8001'
     : 'http://localhost:80';
 
-const AUTH_URL = 'BASE_URL' + '/auth';
+const AUTH_URL = BASE_URL + '/auth';
 
 export const endPoints = {
   auth: {
