@@ -42,14 +42,30 @@ export class SignUpController {
 
     response.cookie('Authorization', accessToken, {
       httpOnly: true,
-      secure: this.configService.get<string>('NODE_ENV') === 'production',
+      secure: true,
+      sameSite:
+        this.configService.get<string>('NODE_ENV') === 'production'
+          ? 'strict'
+          : 'none',
+      domain:
+        this.configService.get<string>('NODE_ENV') === 'production'
+          ? '.kiary.com'
+          : '',
     });
 
     const refreshToken = await this.jwtTokenHandler.generateRefreshToken(12);
 
     response.cookie('Refresh-Token', refreshToken, {
       httpOnly: true,
-      secure: this.configService.get<string>('NODE_ENV') === 'production',
+      secure: true,
+      sameSite:
+        this.configService.get<string>('NODE_ENV') === 'production'
+          ? 'strict'
+          : 'none',
+      domain:
+        this.configService.get<string>('NODE_ENV') === 'production'
+          ? '.kiary.com'
+          : '',
     });
 
     await this.saveRefreshTokenHandler.execute({

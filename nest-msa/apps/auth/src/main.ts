@@ -4,6 +4,8 @@ import { AppModule } from './application/app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  app.enableCors({ origin: true, credentials: true });
+
   app.listen(8001).then(() => {
     console.log(`Auth Service is listening on port 8001`);
   });
