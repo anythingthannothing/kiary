@@ -18,6 +18,9 @@
 /**/logs
 /**/*.log
 
+# Nginx
+nginx.conf
+
 # IDE
 /**/.idea
 

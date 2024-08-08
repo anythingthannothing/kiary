@@ -19,6 +19,9 @@ kiary-web-app/.next
 **/.dockerignore
 **/docker-compose*
 
+# Nginx
+nginx.conf
+
 # VCS
 **/.git
 **/.gitignore

@@ -26,9 +26,9 @@ RUN npm run build
 
 USER node
 
-FROM node:20-alpine As staging
+FROM node:20-alpine As production
 
-ENV NODE_ENV development
+ENV NODE_ENV production
 
 COPY --chown=node:node --from=build /app/node_modules ./node_modules
 COPY --chown=node:node --from=build /app/dist ./dist

@@ -1,5 +1,13 @@
 services:
-#  nginx:
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - kiary-auth
+
   kiary-dev-postgres:
     image: postgres:16.3-alpine
     container_name: kiary-dev-postgres
@@ -30,21 +38,31 @@ services:
     ports:
       - "16379:6379"
 
-#  web_app:
-#    build:
-#      context: ./kiary-web-app
-#      dockerfile: dockerfiles/web-app.dotnet-msa-todo.development.Dockerfile
-#    ports:
-#      - "3000:3000"
-#    env_file:
-#      - kiary-web-app/.env.local
-#    depends_on:
-#      - mongo
+  web_app:
+    build:
+      context: ./kiary-web-app
+      dockerfile: dockerfiles/web-app.development.Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./kiary-web-app:/app
+    env_file:
+      - kiary-web-app/.env.local
+
+  kiary-auth:
+    build:
+      context: ./nest-msa
+      dockerfile: ../dockerfiles/nest-msa-auth.development.Dockerfile
+    volumes:
+      - ./nest-msa:/app
+      - /app/node_modules/
+    depends_on:
+      - kiary-dev-postgres
 
   kiary-todo:
-    image: kiary-todo
     build:
       context: ./dotnet-msa/Todo
       dockerfile: dockerfiles/dotnet-msa-todo.development.Dockerfile
     depends_on:
+      - nginx
       - kiary-dev-postgres
