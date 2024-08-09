@@ -1,5 +1,9 @@
-export const generateRandomString = async (length: number): Promise<string> => {
-  return Math.random()
-    .toString(32)
-    .substring(2, 3 + length);
+import { promisify } from '@app/nest-msa-library/utils/promisify';
+
+export const generateRandomString = (length: number): Promise<string> => {
+  return promisify<string>(() =>
+    Math.random()
+      .toString(32)
+      .substring(1, 2 + length),
+  );
 };
